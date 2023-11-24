@@ -13,7 +13,7 @@ app.use("/api", userRoute);
 
 // routes
 app.get("/", (req, res) => {
-  res.send("API Escuela de Negocios");
+  res.send("Primera API Chakyll");
 });
 
 // mongodb connection

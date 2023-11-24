@@ -16,7 +16,7 @@ router.post("/punches", async (req, res) => {
   
       if (!existingUser) {
         // Si el usuario no existe, enviar una respuesta indicando que el usuario no es válido
-        return res.status(400).json({ message: 'El usuario no existe en la tabla de usuarios.' });
+        return res.status(400).json({ message: 400 });
       }
   
       // Verificar si ya existe un punch con el mismo userId y entryDate
@@ -31,7 +31,7 @@ router.post("/punches", async (req, res) => {
           return res.status(201).json(savedPunch);
         } else {
           // Si el usuario es el mismo, enviar una respuesta indicando que ya existe
-          return res.status(400).json({ message: 'Punch ya registrado con el mismo usuario y entryDate.' });
+          return res.status(400).json({ message: 400 });
         }
       }
   

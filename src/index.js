@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const userRoute = require("./routes/user");
+const punchRoute = require("./routes/punch");
 
 // settings
 const app = express();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 9000;
 // middlewares
 app.use(express.json());
 app.use("/api", userRoute);
+app.use("/api", punchRoute);
 
 // routes
 app.get("/", (req, res) => {

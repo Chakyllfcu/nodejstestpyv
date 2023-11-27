@@ -38,3 +38,13 @@ Content-Type: application/json
   "age": 80,
   "email": "johnconway@email.com"
 }
+
+###
+PUT http://localhost:9000/api/punches/65651fc02cb84c38c3280e0a HTTP/1.1
+Content-Type: application/json
+{
+    "entryDate": "2023-11-24T8:56:43.512Z",
+    "userId": "656021df59f5a8dac80dbf2e",
+    "outDate": "2023-11-24T12:58:43.511Z",
+    "status": 1
+}

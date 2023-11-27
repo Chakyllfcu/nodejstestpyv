@@ -64,14 +64,14 @@ router.get("/punches/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-// delete a user
+/*// delete a user
 router.delete("/punches/:id", (req, res) => {
   const { id } = req.params;
   punchSchema
     .remove({ _id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-});
+});*/
 
 // update a user
 router.put("/punches/:id", (req, res) => {

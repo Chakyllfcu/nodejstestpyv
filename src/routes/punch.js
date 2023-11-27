@@ -47,15 +47,23 @@ router.post("/punches", async (req, res) => {
   
   
 
-// get all users
-router.get("/punches", (req, res) => {
+// get all punches
+router.get("/allpunches", (req, res) => {
   punchSchema
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-// get a user
+// get all active punches
+router.get("/punches", (req, res) => {
+  punchSchema
+    .find({ status: 1 })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
+// get a punch
 router.get("/punches/:id", (req, res) => {
   const { id } = req.params;
   punchSchema
@@ -73,7 +81,7 @@ router.delete("/punches/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });*/
 
-// update a user
+// update a punch
 router.put("/punches/:id", (req, res) => {
   const { id } = req.params;
   const { entryDate, userId, outDate, status } = req.body;
